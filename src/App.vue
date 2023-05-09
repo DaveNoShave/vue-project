@@ -1,11 +1,9 @@
 <template>
   <body>
+  
     <div class="login-page">
-      <img
-        src="https://github.com/DaveNoShave/vue-project/blob/571ea1be99a4e0aae12e66d45eaef41cf9fdb49e/src/bilen.png"
-        alt="Bilen"
-      />
-      <h1>Login</h1>
+      <img src="https://i.postimg.cc/gJXTPf3Q/bilen.png" alt="Bilen" />
+
       <form @submit.prevent="login">
         <label for="email">Email:</label>
         <input type="email" id="email" v-model="email" required />
@@ -18,17 +16,24 @@
           <input type="checkbox" id="rememberMe" v-model="rememberMe" />
         </div>
 
-        <button type="submit">Login</button>
-
-        <button
-          type="button"
-          @click="forgotPassword"
-          class="forgot-password-button"
-        >
-          Forgot Password
-        </button>
+        <div class="button-container">
+          <button type="submit">Login</button>
+          <button
+            type="button"
+            @click="forgotPassword"
+            class="forgot-password-button"
+          >
+            Forgot Password
+          </button>
+        </div>
       </form>
       <p v-if="error" class="error-message">{{ error }}</p>
+    </div>
+    <div class="footer">
+      <div class="footer-content">
+        <p>Contact us</p>
+        <p>theniners@umu.se</p>
+      </div>
     </div>
   </body>
 </template>
@@ -46,7 +51,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 form {
@@ -67,6 +72,72 @@ form > div {
   font-size: 0.9rem;
   font-weight: bold;
 }
+
+.footer {
+  background-color: #264653;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0;
+  color: white;
+  font-size: 1rem;
+}
+
+.footer-content p:first-child {
+  margin-bottom: 0.25rem;
+}
+
+input[type="email"],
+input[type="password"] {
+  background-color: #E1F2FE;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  margin-right: 4rem;
+}
+
+  button {
+    background-color: #E1F2FE;
+    border: none;
+    color: #333;
+    padding: 0.25rem 0.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s;
+  }
+
+button:hover {
+  background-color: #cde7fe;
+}
+
+
+.button-container {
+    display: flex;
+    gap: 0.5rem;
+  }
 </style>
 
 <script>
