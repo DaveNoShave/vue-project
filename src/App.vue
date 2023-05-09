@@ -1,7 +1,7 @@
 <template>
   <body>
     <div class="login-page">
-      <img src="bilen.png" alt="Bilen" />
+      <img src="" alt="Bilen" />
       <h1>Login</h1>
       <form @submit.prevent="login">
         <label for="email">Email:</label>
@@ -32,7 +32,7 @@
 
 <style>
 body {
-  background-color: red;
+  background-color: #2a9d8f;
 }
 </style>
 
