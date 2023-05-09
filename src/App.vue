@@ -2,7 +2,7 @@
   <body>
     <div class="login-page">
       <img
-        src="https://github.com/DaveNoShave/vue-project/blob/main/bilen.png"
+        src="https://github.com/DaveNoShave/vue-project/blob/571ea1be99a4e0aae12e66d45eaef41cf9fdb49e/src/bilen.png"
         alt="Bilen"
       />
       <h1>Login</h1>
@@ -36,6 +36,36 @@
 <style>
 body {
   background-color: #2a9d8f;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+form > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 </style>
 
