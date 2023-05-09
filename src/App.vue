@@ -1,29 +1,54 @@
 <template>
-  <div id="app">
-    <img alt="Bilen" src="./components/bilen.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+<body>
+  <div class="login-page">
+  <img src="bilen.png" alt="Bilen">
+    <h1>Login</h1>
+    <form @submit.prevent="login">
+      <label for="email">Email:</label>
+      <input type="email" id="email" v-model="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" v-model="password" required />
+
+      <div>
+        <label for="rememberMe">Remember me:</label>
+        <input type="checkbox" id="rememberMe" v-model="rememberMe" />
+      </div>
+
+      <button type="submit">Login</button>
+
+      <button
+        type="button"
+        @click="forgotPassword"
+        class="forgot-password-button"
+      >
+        Forgot Password
+      </button>
+    </form>
+    <p v-if="error" class="error-message">{{ error }}</p>
   </div>
+  </body>
 </template>
 
+
+<style>
+body {
+  background-color: red;
+}
+</style>
+
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import { VButton } from 'vuestic-ui';
 
 export default {
-  name: 'App',
+  name: 'MyComponent',
   components: {
-    HelloWorld,
+    VButton,
+  },
+  data() {
+    return {
+      message: 'Hello, world!',
+    };
   },
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-background-colour: hsl(172.7, 58%, 39%);
-</style>
