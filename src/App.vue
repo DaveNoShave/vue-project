@@ -1,7 +1,10 @@
 <template>
   <body>
     <div class="login-page">
-      <img src="" alt="Bilen" />
+      <img
+        src="https://github.com/DaveNoShave/vue-project/blob/main/bilen.png"
+        alt="Bilen"
+      />
       <h1>Login</h1>
       <form @submit.prevent="login">
         <label for="email">Email:</label>
